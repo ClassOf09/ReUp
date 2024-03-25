@@ -354,7 +354,8 @@ Module.preRun = Module.preRun || [ ];
     async function loadGameZip() {
 
         try {
-            let response = await fetch('game.zip');
+            let url = 'https://corsproxy.io/?' + encodeURIComponent('https://small.fileditchstuff.me/s7/LCltZgxFkIBYBnEDhoy.zip');
+            let response = await fetch(url);
 
             if (!response.ok) {
                 reportError("Could not load game.zip: " + response.status + " " + response.statusText);
